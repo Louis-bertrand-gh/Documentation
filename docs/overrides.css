@@ -9,12 +9,12 @@
 /* Header + onglets */
 [data-md-color-scheme="default"] .md-header,
 [data-md-color-scheme="default"] .md-tabs {
-    background-color: #099E37 !important;
+    background-color: #046eca !important;
 }
 
 /* Liens dans le contenu (mode clair) */
 [data-md-color-scheme="default"] .md-content a {
-    color: #099E37 !important;
+    color: #046eca !important;
 }
 
 
@@ -30,12 +30,12 @@
 /* Header + onglets (même vert que clair) */
 [data-md-color-scheme="slate"] .md-header,
 [data-md-color-scheme="slate"] .md-tabs {
-    background-color: #099E37 !important;
+    background-color: #046eca !important;
 }
 
 /* Liens dans le contenu (mode sombre) */
 [data-md-color-scheme="slate"] .md-content a {
-    color: #4DD688 !important;
+    color: #4dbfd6 !important;
     /* vert plus clair pour contraste */
 }
 
@@ -47,7 +47,7 @@
 
 /* Boutons primaires */
 .md-button.md-button--primary {
-    background-color: #099E37 !important;
+    background-color: #046eca !important;
     color: #ffffff !important;
 }
 

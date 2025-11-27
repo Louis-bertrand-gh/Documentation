@@ -1,6 +1,6 @@
-# Guide des commandes pour Routeur Swicth Cisco
+# Guide des commandes pour Swicth Cisco
 
-# Rappel des commandes
+## Rappel des commandes
 
 ## Switch
 
