@@ -35,16 +35,16 @@ theme:
 
     # --- MODE CLAIR ---
     - scheme: default
-      primary: "##046eca"
-      accent: "##046eca"
+      primary: "#2B2A2A"
+      accent: "#2B2A2A"
       toggle:
         icon: material/weather-night
         name: Passer au mode sombre
 
     # --- MODE SOMBRE ---
     - scheme: slate
-      primary: "##046eca"
-      accent: "##046eca"
+      primary: "#2B2A2A"
+      accent: "#2B2A2A"
       toggle:
         icon: material/weather-sunny
         name: Passer au mode clair
