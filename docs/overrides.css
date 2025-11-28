@@ -23,7 +23,7 @@
    MODE SOMBRE (scheme: slate)
    ====================================================== */
 [data-md-color-scheme="slate"] {
-    --md-default-bg-color: #2B2A2A !important;
+    --md-default-bg-color: #14142E !important;
     --md-default-fg-color: #ffffff !important;
 }
 
