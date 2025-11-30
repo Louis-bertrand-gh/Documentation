@@ -1,0 +1,2523 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../Equipements/Win10/">
+      
+      
+        <link rel="next" href="../CBP/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Active Directory - Documentation Louis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../overrides.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="#000000" data-md-color-accent="#2B2A2A">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#active-directory" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="Documentation Louis" class="md-header__button md-logo" aria-label="Documentation Louis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation Louis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Active Directory
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="#000000" data-md-color-accent="#2B2A2A"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="#000000" data-md-color-accent="#2B2A2A"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Documentation Louis" class="md-nav__button md-logo" aria-label="Documentation Louis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentation Louis
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation Louis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Equipements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Equipements/Firewall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Active Directory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Equipements/LinuxDebian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LinuxDebian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Equipements/Renitialisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide : Réinitialisation et ROMMON sur Routeurs Cisco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Equipements/Routeur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide des commandes pour Routeur Cisco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Equipements/Switch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide des commandes pour Swicth Cisco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Equipements/Win10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Win10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Services
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ActiveDirectory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ActiveDirectory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Active Directory
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Active Directory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#organisation-des-unites-ou" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organisation des unités (OU)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organisation des unités (OU)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creation-dune-ou-pour-chaque-service-disponible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Création d’une OU pour chaque service disponible
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-des-utilisateurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestion des utilisateurs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestion des utilisateurs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajout-des-utilisateurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ajout des utilisateurs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liste-des-utilisateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Liste des Utilisateur
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-powershell-utilise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script powershell utilisé
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apache2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Apache2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Apache2/Apache2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apache2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Apache2/CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BDD
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BDD
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BDD/BDD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de Données
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BDD/CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DNS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DNS/CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DNS/DNS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HMAIL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    HMAIL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HMAIL/CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HMAIL/HMAIL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HMAIL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenSSL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenSSL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenSSL/CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenSSL/OpenSSL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenSSL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ReverseProxy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ReverseProxy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ReverseProxy/CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ReverseProxy/ReverseProxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation : Mise en place d'un Reverse Proxy avec Nginx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SSH
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SSH/CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SSH/SSH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide installation et Bonne pratiques pour SSH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WordPress
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    WordPress
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WordPress/CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WordPress/WordPress/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WordPress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#organisation-des-unites-ou" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Organisation des unités (OU)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Organisation des unités (OU)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creation-dune-ou-pour-chaque-service-disponible" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Création d’une OU pour chaque service disponible
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-des-utilisateurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gestion des utilisateurs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestion des utilisateurs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajout-des-utilisateurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ajout des utilisateurs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liste-des-utilisateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Liste des Utilisateur
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-powershell-utilise" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script powershell utilisé
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="active-directory">Active Directory</h1>
+<hr />
+<h2 id="organisation-des-unites-ou">Organisation des unités (OU)</h2>
+<hr />
+<h3 id="creation-dune-ou-pour-chaque-service-disponible">Création d’une OU pour chaque service disponible</h3>
+<ul>
+<li>Production</li>
+<li>
+<p>Sous-OU :</p>
+</li>
+<li>
+<p>A</p>
+</li>
+<li>
+<p>B</p>
+</li>
+<li>
+<p>Conception</p>
+</li>
+<li>Informatique</li>
+</ul>
+<hr />
+<h2 id="gestion-des-utilisateurs">Gestion des utilisateurs</h2>
+<hr />
+<h3 id="ajout-des-utilisateurs">Ajout des utilisateurs</h3>
+<ul>
+<li>
+<p>Dans chaque service</p>
+</li>
+<li>
+<p>Dans chaque OU</p>
+</li>
+<li>
+<p>Dans chaque groupe associé</p>
+</li>
+</ul>
+<hr />
+<h2 id="liste-des-utilisateur">Liste des Utilisateur</h2>
+<hr />
+<table>
+<thead>
+<tr>
+<th>NOM</th>
+<th>PRENOM</th>
+<th>SERVICE</th>
+<th>EQUIPE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHEUVAN</td>
+<td>Marie Alice</td>
+<td>CONCEPTION</td>
+<td></td>
+</tr>
+<tr>
+<td>PREHEM-TORTA</td>
+<td>Pierric</td>
+<td>CONCEPTION</td>
+<td></td>
+</tr>
+<tr>
+<td>QUETEBOEUFS</td>
+<td>Esmeralda</td>
+<td>CONCEPTION</td>
+<td></td>
+</tr>
+<tr>
+<td>BRAEUX</td>
+<td>Salvatore</td>
+<td>CONCEPTION</td>
+<td></td>
+</tr>
+<tr>
+<td>REPSODE</td>
+<td>Yann</td>
+<td>CONCEPTION</td>
+<td></td>
+</tr>
+<tr>
+<td>GHRASSA</td>
+<td>Christiane</td>
+<td>CONCEPTION</td>
+<td></td>
+</tr>
+<tr>
+<td>NWONWU</td>
+<td>Fatiha</td>
+<td>CONCEPTION</td>
+<td></td>
+</tr>
+<tr>
+<td>BROUERD</td>
+<td>Fatiha</td>
+<td>CONCEPTION</td>
+<td></td>
+</tr>
+<tr>
+<td>BEYREMOGLU</td>
+<td>Corinne</td>
+<td>CONCEPTION</td>
+<td></td>
+</tr>
+<tr>
+<td>MAOT</td>
+<td>Denise</td>
+<td>CONCEPTION</td>
+<td></td>
+</tr>
+<tr>
+<td>LAMONE</td>
+<td>John</td>
+<td>CONCEPTION</td>
+<td></td>
+</tr>
+<tr>
+<td>MOROGLU</td>
+<td>Farid</td>
+<td>CONCEPTION</td>
+<td></td>
+</tr>
+<tr>
+<td>PEALLET</td>
+<td>Nadège</td>
+<td>CONCEPTION</td>
+<td></td>
+</tr>
+<tr>
+<td>DEMECON</td>
+<td>tante</td>
+<td>CONCEPTION</td>
+<td></td>
+</tr>
+<tr>
+<td>GOMES EDUERDO</td>
+<td>Yvan</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>BENOAT</td>
+<td>Vincent</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>NEAL</td>
+<td>Erminda</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>SEBEE</td>
+<td>Vincent</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>DEUPHAN</td>
+<td>Laurence</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>HEMEDE</td>
+<td>Yamina</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>DERON</td>
+<td>Jérôme</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>MERGOT</td>
+<td>Myriam</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>ROUSSEEU</td>
+<td>Ali-Osman</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>CHEMBRAN</td>
+<td>Sandrine</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>DJEDJE YOHOU</td>
+<td>Joao Fernando</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>DAEBY</td>
+<td>Virgil</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>BERBASSOU</td>
+<td>Farid</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>QUETEBOEUFS</td>
+<td>Roland</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>BECF</td>
+<td>Khemais</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>CHRASTEAN</td>
+<td>Yamina</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>DAMBEMBU</td>
+<td>Marie Laur</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>FOFENE</td>
+<td>Esther</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>BECF</td>
+<td>Michelle</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>BOURET</td>
+<td>Dalila</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>DZEBETOU-ECFO</td>
+<td>Luis</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>AGHALEHRAZ</td>
+<td>Cedric</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>PREHEM-TORTA</td>
+<td>Viviane</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>SOLER</td>
+<td>Jeanlou</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>DOUHEBA</td>
+<td>Joao</td>
+<td>PRODUCTION</td>
+<td>A</td>
+</tr>
+<tr>
+<td>PERASY</td>
+<td>Frédérique</td>
+<td>PRODUCTION</td>
+<td>B</td>
+</tr>
+<tr>
+<td>GRAGNON</td>
+<td>Latha</td>
+<td>PRODUCTION</td>
+<td>B</td>
+</tr>
+<tr>
+<td>BREENT MACHEL</td>
+<td>Agnes</td>
+<td>PRODUCTION</td>
+<td>B</td>
+</tr>
+<tr>
+<td>CHEPASEEU</td>
+<td>Pierre Marc</td>
+<td>PRODUCTION</td>
+<td>B</td>
+</tr>
+<tr>
+<td>ELAPOUR-EZEDEH</td>
+<td>Benamar</td>
+<td>PRODUCTION</td>
+<td>B</td>
+</tr>
+<tr>
+<td>RESOEVETSERE</td>
+<td>Hélène</td>
+<td>PRODUCTION</td>
+<td>B</td>
+</tr>
+<tr>
+<td>ELEXENDRE</td>
+<td>Jeanine</td>
+<td>PRODUCTION</td>
+<td>B</td>
+</tr>
+<tr>
+<td>DZEFEROVAC EUGUAN</td>
+<td>Thérésia</td>
+<td>PRODUCTION</td>
+<td>B</td>
+</tr>
+<tr>
+<td>BRAERE</td>
+<td>Valerie</td>
+<td>PRODUCTION</td>
+<td>B</td>
+</tr>
+<tr>
+<td>DOMANGUES VAEARE</td>
+<td>Georges</td>
+<td>PRODUCTION</td>
+<td>B</td>
+</tr>
+<tr>
+<td>GONZELVES</td>
+<td>Abdelkader</td>
+<td>PRODUCTION</td>
+<td>B</td>
+</tr>
+<tr>
+<td>LAVOLSA</td>
+<td>Maïmouna</td>
+<td>PRODUCTION</td>
+<td>B</td>
+</tr>
+<tr>
+<td>MEZERD</td>
+<td>Jean-Eddy</td>
+<td>PRODUCTION</td>
+<td>B</td>
+</tr>
+<tr>
+<td>GODOU</td>
+<td>Lassaad</td>
+<td>PRODUCTION</td>
+<td>B</td>
+</tr>
+<tr>
+<td>BLEASE</td>
+<td>Kathia</td>
+<td>PRODUCTION</td>
+<td>B</td>
+</tr>
+<tr>
+<td>BAGUEREEU</td>
+<td>Marie Ange</td>
+<td>PRODUCTION</td>
+<td>B</td>
+</tr>
+<tr>
+<td>LEDEUPHAN</td>
+<td>Karine</td>
+<td>PRODUCTION</td>
+<td>B</td>
+</tr>
+<tr>
+<td>EME</td>
+<td>Marie-Luc</td>
+<td>INFORMATIQUE</td>
+<td></td>
+</tr>
+<tr>
+<td>DORENGE</td>
+<td>Marine</td>
+<td>INFORMATIQUE</td>
+<td></td>
+</tr>
+<tr>
+<td>THARENT</td>
+<td>Alvaro</td>
+<td>INFORMATIQUE</td>
+<td></td>
+</tr>
+<tr>
+<td>BENTELEB</td>
+<td>John</td>
+<td>INFORMATIQUE</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="script-powershell-utilise">Script powershell utilisé</h2>
+<hr />
+<div class="highlight"><pre><span></span><code># Script d&#39;importation d&#39;utilisateurs Active Directory depuis CSV
+
+
+# Importer le module Active Directory
+
+Import-Module ActiveDirectory
+
+# Définir les chemins de base de votre infrastructure
+
+$domainDN = &quot;DC=orl,DC=orleans,DC=sportludique,DC=fr&quot;
+
+$ouBasePath = &quot;$domainDN&quot;
+
+# Définir les OU des services (sans sous-OU)
+
+$ouServices = @{
+
+    &quot;Conception&quot; = &quot;OU=Conception,$ouBasePath&quot;
+
+    &quot;Informatique&quot; = &quot;OU=Informatique,$ouBasePath&quot;
+
+    &quot;Production&quot; = &quot;OU=Production,$ouBasePath&quot;
+
+}
+
+# Définir les groupes principaux par service
+
+$groupesServices = @{
+
+    &quot;Conception&quot; = &quot;GRP_CONCEPTION&quot;
+
+    &quot;Informatique&quot; = &quot;GRP_INFORMATIQUE&quot;
+
+    &quot;Production&quot; = &quot;GRP_PRODUCTION&quot;
+
+}
+
+# Définir les sous-groupes Production
+
+$sousGroupesProduction = @{
+
+    &quot;A&quot; = &quot;GRP_PRODUCTION_A&quot;
+
+    &quot;B&quot; = &quot;GRP_PRODUCTION_B&quot;
+
+}
+
+# Chemin du fichier CSV
+
+$csvPath = &quot;.\orleans.csv&quot;
+
+# Vérifier si le fichier CSV existe
+
+if (-not (Test-Path $csvPath)) {
+
+    Write-Host &quot;Erreur : Le fichier $csvPath n&#39;existe pas !&quot; -ForegroundColor Red
+
+    exit
+
+}
+
+# Importer les données du CSV
+
+# Format attendu : NOM;PRENOM;SERVICE;SOUS_OU
+
+$utilisateurs = Import-Csv -Path $csvPath -Delimiter &quot;;&quot; -Encoding UTF8
+
+Write-Host &quot;============================================&quot; -ForegroundColor Cyan
+
+Write-Host &quot;Import d&#39;utilisateurs dans Active Directory&quot; -ForegroundColor Cyan
+
+Write-Host &quot;============================================&quot; -ForegroundColor Cyan
+
+Write-Host &quot;&quot;
+
+foreach ($user in $utilisateurs) {
+
+    $nom = $user.NOM.Trim()
+
+    $prenom = $user.PRENOM.Trim()
+
+    $service = $user.SERVICE.Trim()
+
+    $sousOU = if ($user.SOUS_OU) { $user.SOUS_OU.Trim() } else { &quot;&quot; }
+
+    # Vérifier que le service existe dans notre mapping
+
+    if (-not $ouServices.ContainsKey($service)) {
+
+        Write-Host &quot;⚠ Utilisateur $prenom $nom : Service &#39;$service&#39; non reconnu. Ignoré.&quot; -ForegroundColor Yellow
+
+        continue
+
+    }
+
+    # Construire les informations de l&#39;utilisateur
+
+    $samAccountName = ($prenom.Substring(0,1) + $nom).ToLower()
+
+    $userPrincipalName = &quot;$samAccountName@orl.orleans.sportludique.fr&quot;
+
+    $displayName = &quot;$prenom $nom&quot;
+
+    # Déterminer le chemin OU (avec ou sans sous-OU)
+
+    if ($sousOU -ne &quot;&quot;) {
+
+        $ouPath = &quot;OU=$sousOU,&quot; + $ouServices[$service]
+
+    }
+
+    else {
+
+        $ouPath = $ouServices[$service]
+
+    }
+
+    # Mot de passe par défaut (à changer lors de la première connexion)
+
+    $defaultPassword = ConvertTo-SecureString &quot;P@ssw0rd123!&quot; -AsPlainText -Force
+
+    try {
+
+        # Vérifier si l&#39;utilisateur existe déjà
+
+        $existingUser = Get-ADUser -Filter &quot;SamAccountName -eq &#39;$samAccountName&#39;&quot; -ErrorAction SilentlyContinue
+
+        if ($existingUser) {
+
+            Write-Host &quot;⚠ Utilisateur $samAccountName existe déjà. Ignoré.&quot; -ForegroundColor Yellow
+
+        }
+
+        else {
+
+            # Créer l&#39;utilisateur
+
+            New-ADUser `
+
+                -Name $displayName `
+
+                -GivenName $prenom `
+
+                -Surname $nom `
+
+                -SamAccountName $samAccountName `
+
+                -UserPrincipalName $userPrincipalName `
+
+                -Path $ouPath `
+
+                -AccountPassword $defaultPassword `
+
+                -Enabled $true `
+
+                -ChangePasswordAtLogon $true `
+
+                -Department $service `
+
+                -Description &quot;Utilisateur du service $service&quot;
+
+            Write-Host &quot;✓ Utilisateur créé : $displayName ($samAccountName)&quot; -ForegroundColor Green
+
+            # Ajouter au groupe principal du service
+
+            $groupePrincipal = $groupesServices[$service]
+
+            $groupePrincipalDN = &quot;CN=$groupePrincipal,&quot; + $ouServices[$service]
+
+            try {
+
+                Add-ADGroupMember -Identity $groupePrincipalDN -Members $samAccountName -ErrorAction Stop
+
+                Write-Host &quot;  └─ Ajouté au groupe : $groupePrincipal&quot; -ForegroundColor Cyan
+
+            }
+
+            catch {
+
+                Write-Host &quot;  └─ ⚠ Erreur ajout au groupe $groupePrincipal : $($_.Exception.Message)&quot; -ForegroundColor Yellow
+
+            }
+
+            # Si service Production, ajouter aussi au sous-groupe
+
+            if ($service -eq &quot;Production&quot; -and $sousOU -ne &quot;&quot;) {
+
+                if ($sousGroupesProduction.ContainsKey($sousOU)) {
+
+                    $sousGroupe = $sousGroupesProduction[$sousOU]
+
+                    $sousGroupeDN = &quot;CN=$sousGroupe,&quot; + $ouServices[$service]
+
+                    try {
+
+                        Add-ADGroupMember -Identity $sousGroupeDN -Members $samAccountName -ErrorAction Stop
+
+                        Write-Host &quot;  └─ Ajouté au sous-groupe : $sousGroupe&quot; -ForegroundColor Cyan
+
+                    }
+
+                    catch {
+
+                        Write-Host &quot;  └─ ⚠ Erreur ajout au sous-groupe $sousGroupe : $($_.Exception.Message)&quot; -ForegroundColor Yellow
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    catch {
+
+        Write-Host &quot;✗ Erreur lors de la création de $displayName : $($_.Exception.Message)&quot; -ForegroundColor Red
+
+    }
+
+}
+
+Write-Host &quot;&quot;
+
+Write-Host &quot;============================================&quot; -ForegroundColor Cyan
+
+Write-Host &quot;Import terminé&quot; -ForegroundColor Cyan
+
+Write-Host &quot;============================================&quot; -ForegroundColor Cyan
+</code></pre></div>
+<h1 id="active-directory-secondaire">Active Directory Secondaire</h1>
+<h2 id="etape-1-installation-du-role-ad-ds">Étape 1 : Installation du Rôle AD DS</h2>
+<ol>
+<li>Ouvrez le <strong>Gestionnaire de serveur</strong></li>
+<li>Cliquez sur <strong>Gérer</strong> → <strong>Ajouter des rôles et fonctionnalités</strong></li>
+<li>Assistant d'ajout de rôles :</li>
+<li>Page <strong>Avant de commencer</strong> : Cliquez sur <strong>Suivant</strong></li>
+<li><strong>Type d'installation</strong> : Sélectionnez <strong>Installation basée sur un rôle ou une fonctionnalité</strong> → <strong>Suivant</strong></li>
+<li><strong>Sélection du serveur</strong> : Choisissez votre serveur → <strong>Suivant</strong></li>
+<li><strong>Rôles de serveurs</strong> : Cochez <strong>Services AD DS (Active Directory Domain Services)</strong></li>
+<li>Une fenêtre popup apparaît, cliquez sur <strong>Ajouter des fonctionnalités</strong> → <strong>Suivant</strong></li>
+<li><strong>Fonctionnalités</strong> : Laissez par défaut → <strong>Suivant</strong></li>
+<li><strong>AD DS</strong> : Lisez les informations → <strong>Suivant</strong></li>
+<li><strong>Confirmation</strong> : Cliquez sur <strong>Installer</strong></li>
+<li>Attendez la fin de l'installation (ne fermez pas la fenêtre)</li>
+</ol>
+<h2 id="etape-2-promotion-en-controleur-de-domaine">Étape 2 : Promotion en Contrôleur de Domaine</h2>
+<ol>
+<li>À la fin de l'installation, cliquez sur <strong>Promouvoir ce serveur en contrôleur de domaine</strong> (lien avec drapeau jaune dans le Gestionnaire de serveur)</li>
+</ol>
+<h3 id="configuration-du-deploiement">Configuration du déploiement</h3>
+<ul>
+<li>Sélectionnez <strong>Ajouter un contrôleur de domaine à un domaine existant</strong></li>
+<li>Domaine : Vérifiez que votre domaine est affiché (ex : entreprise.local)</li>
+<li>Cliquez sur <strong>Modifier</strong> pour fournir les identifiants d'administrateur du domaine si nécessaire</li>
+<li>Cliquez sur <strong>Suivant</strong></li>
+</ul>
+<h3 id="options-du-controleur-de-domaine">Options du contrôleur de domaine</h3>
+<ul>
+<li>Niveau fonctionnel : Laissez la valeur par défaut</li>
+<li>Cochez <strong>Serveur DNS</strong> (recommandé)</li>
+<li>Cochez <strong>Catalogue global (GC)</strong> (recommandé pour la redondance)</li>
+<li>Entrez un <strong>mot de passe DSRM</strong> (mode restauration des services d'annuaire) - À conserver précieusement !</li>
+<li>Cliquez sur <strong>Suivant</strong></li>
+</ul>
+<h3 id="options-dns">Options DNS</h3>
+<ul>
+<li>Ignorez l'avertissement éventuel sur la délégation DNS</li>
+<li>Cliquez sur <strong>Suivant</strong></li>
+</ul>
+<h3 id="options-supplementaires">Options supplémentaires</h3>
+<ul>
+<li>Le système détecte automatiquement le DC source pour la réplication</li>
+<li>Vérifiez que le bon DC est sélectionné</li>
+<li>Cliquez sur <strong>Suivant</strong></li>
+</ul>
+<h3 id="verification-de-la-configuration-requise">Vérification de la configuration requise</h3>
+<ul>
+<li>L'assistant effectue une vérification complète</li>
+<li>Lisez les avertissements éventuels (certains sont normaux)</li>
+<li>Si tout est OK, cliquez sur <strong>Installer</strong></li>
+</ul>
+<p>Le serveur redémarrera automatiquement après l'installation.</p>
+<h2 id="etape-3-verification-post-installation">Étape 3 : Vérification Post-Installation</h2>
+<p>Après le redémarrage, connectez-vous avec un compte administrateur du domaine.</p>
+<h3 id="verification-dans-le-gestionnaire-de-serveur">Vérification dans le Gestionnaire de serveur</h3>
+<ol>
+<li>Ouvrez le <strong>Gestionnaire de serveur</strong></li>
+<li>Vérifiez que le rôle <strong>AD DS</strong> est affiché</li>
+<li>Aucune erreur ne devrait apparaître</li>
+</ol>
+<h3 id="verification-de-la-replication">Vérification de la réplication</h3>
+<ol>
+<li>Ouvrez <strong>Outils</strong> → <strong>Sites et services Active Directory</strong></li>
+<li>Naviguez vers : <strong>Sites</strong> → <strong>Default-First-Site-Name</strong> → <strong>Servers</strong> → Votre nouveau DC</li>
+<li>Vérifiez la présence des connexions de réplication</li>
+</ol>
+<h3 id="test-avec-powershell">Test avec PowerShell</h3>
+<p>Ouvrez PowerShell en tant qu'administrateur et exécutez :</p>
+<div class="highlight"><pre><span></span><code><span class="c"># Vérifier la réplication</span>
+<span class="n">repadmin</span> <span class="p">/</span><span class="n">replsummary</span>
+</code></pre></div>
+<h2 id="configuration-dns-recommandee">Configuration DNS Recommandée</h2>
+<ol>
+<li>Sur le DC principal, ouvrez <strong>Gestionnaire DNS</strong></li>
+<li>Ajoutez l'adresse IP du nouveau DC comme serveur DNS secondaire</li>
+<li>Sur les clients, configurez le nouveau DC comme DNS secondaire</li>
+</ol>
+<h2 id="sauvegarde-du-mot-de-passe-dsrm">Sauvegarde du Mot de Passe DSRM</h2>
+<p>⚠️ <strong>IMPORTANT</strong> : Conservez le mot de passe DSRM dans un coffre-fort sécurisé. Il est nécessaire pour la restauration en cas de problème grave.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>

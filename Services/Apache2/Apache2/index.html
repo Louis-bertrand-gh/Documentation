@@ -1,0 +1,2110 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../ActiveDirectory/CBP/">
+      
+      
+        <link rel="next" href="../CBP/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Apache2 - Documentation Louis</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../overrides.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="#000000" data-md-color-accent="#2B2A2A">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#apache2" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="Documentation Louis" class="md-header__button md-logo" aria-label="Documentation Louis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation Louis
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Apache2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="#000000" data-md-color-accent="#2B2A2A"  aria-label="Passer au mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer au mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="#000000" data-md-color-accent="#2B2A2A"  aria-label="Passer au mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer au mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Documentation Louis" class="md-nav__button md-logo" aria-label="Documentation Louis" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentation Louis
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation Louis
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Equipements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Equipements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Equipements/Firewall/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Active Directory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Equipements/LinuxDebian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LinuxDebian
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Equipements/Renitialisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide : Réinitialisation et ROMMON sur Routeurs Cisco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Equipements/Routeur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide des commandes pour Routeur Cisco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Equipements/Switch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide des commandes pour Swicth Cisco
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Equipements/Win10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Win10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Services
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Services
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ActiveDirectory
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ActiveDirectory
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ActiveDirectory/ActiveDirectory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Active Directory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ActiveDirectory/CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apache2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Apache2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apache2
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Apache2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#met-a-jour-la-liste-des-paquets-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Met à jour la liste des paquets disponibles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#met-a-jour-les-paquets-installes-optionnel-mais-recommande" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Met à jour les paquets installés (optionnel, mais recommandé)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-vhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les Vhost
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les Vhost">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fichier-etcapache2sites-availabledwwworleansspfrconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fichier etc/apache2/sites-availabled/www.orleans.sp.fr.conf
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activer-un-vhost-une-fois-le-fichier-cree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activer un vhost une fois le fichier créé
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cree-des-pages-pour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crée des pages pour
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creer-une-route-statique-interne-pour-acceder-au-reseaux-lan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Créer une route statique (interne) pour accéder au réseaux lan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sur-les-routeurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sur les routeurs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sur-le-serveur-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sur le serveur DNS
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BDD
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    BDD
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BDD/BDD/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de Données
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../BDD/CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DNS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DNS/CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DNS/DNS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HMAIL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    HMAIL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HMAIL/CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../HMAIL/HMAIL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HMAIL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenSSL
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenSSL
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenSSL/CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OpenSSL/OpenSSL/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenSSL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ReverseProxy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ReverseProxy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ReverseProxy/CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ReverseProxy/ReverseProxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation : Mise en place d'un Reverse Proxy avec Nginx
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSH
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    SSH
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SSH/CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../SSH/SSH/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide installation et Bonne pratiques pour SSH
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WordPress
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    WordPress
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WordPress/CBP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CBP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../WordPress/WordPress/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WordPress
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#met-a-jour-la-liste-des-paquets-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Met à jour la liste des paquets disponibles
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#met-a-jour-les-paquets-installes-optionnel-mais-recommande" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Met à jour les paquets installés (optionnel, mais recommandé)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-vhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Les Vhost
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les Vhost">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fichier-etcapache2sites-availabledwwworleansspfrconf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fichier etc/apache2/sites-availabled/www.orleans.sp.fr.conf
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activer-un-vhost-une-fois-le-fichier-cree" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Activer un vhost une fois le fichier créé
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cree-des-pages-pour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crée des pages pour
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creer-une-route-statique-interne-pour-acceder-au-reseaux-lan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Créer une route statique (interne) pour accéder au réseaux lan
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sur-les-routeurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sur les routeurs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sur-le-serveur-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sur le serveur DNS
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="apache2">Apache2</h1>
+<h2 id="met-a-jour-la-liste-des-paquets-disponibles">Met à jour la liste des paquets disponibles</h2>
+<div class="highlight"><pre><span></span><code>sudo apt update
+</code></pre></div>
+<h2 id="met-a-jour-les-paquets-installes-optionnel-mais-recommande">Met à jour les paquets installés (optionnel, mais recommandé)</h2>
+<div class="highlight"><pre><span></span><code>sudo apt upgrade -y
+<span class="sb"> ```</span>
+
+<span class="sb">## Installation d&#39;Apache2</span>
+
+<span class="sb"> ```</span>
+sudo apt install apache2 -y
+</code></pre></div>
+<hr />
+<hr />
+<h2 id="les-vhost">Les Vhost</h2>
+<p>Sous Linux la configuration des Vhosts se fait :</p>
+<div class="highlight"><pre><span></span><code>/etc/apache2/sites-available/   → contient tous les fichiers de configuration des sites
+
+Fichier : /etc/apache2/sites-available/mon_site.conf  dans notre cas → /etc/apache2/sites-available/www.orleans.sp.fr.conf 
+
+---------------------------------------------------------------------------------
+
+/etc/apache2/sites-enabled/     → contient les sites actuellement activés (liens symboliques pointant vers sites-available )
+
+Fichier : /etc/apache2/sites-enabled/mon_site.conf  dans notre cas → /etc/apache2/sites-enabled/www.orleans.sp.fr.conf
+</code></pre></div>
+<h3 id="fichier-etcapache2sites-availabledwwworleansspfrconf">Fichier etc/apache2/sites-availabled/www.orleans.sp.fr.conf</h3>
+<div class="highlight"><pre><span></span><code>&lt;VirtualHost *:80&gt;
+        # The ServerName directive sets the request scheme, hostname and port that
+        # the server uses to identify itself. This is used when creating
+        # redirection URLs. In the context of virtual hosts, the ServerName
+        # specifies what hostname must appear in the request&#39;s Host: header to
+        # match this virtual host. For the default virtual host (this file) this
+        # value is not decisive as it is used as a last resort host regardless.
+        # However, you must set it for any further virtual host explicitly.
+        ServerName www.orleans.sportludique.fr
+        ServerAlias www.orleans.sportludique.fr
+        DocumentRoot /var/www/siteorl
+
+        &lt;Directory /var/www/siteorl&gt;
+            Options Indexes FollowSymLinks
+            AllowOverride All
+           # Require all granted
+    &lt;/Directory&gt;
+
+        # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
+        # error, crit, alert, emerg.
+        # It is also possible to configure the loglevel for particular
+        # modules, e.g.
+        <span class="ni">#LogLevel</span> info ssl:warn
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        # For most configuration files from conf-available/, which are
+        # enabled or disabled at a global level, it is possible to
+        # include a line for only one particular virtual host. For example the
+        # following line enables the CGI configuration for this host only
+        # after it has been globally disabled with &quot;a2disconf&quot;.
+        <span class="ni">#Include</span> conf-available/serve-cgi-bin.conf      
+&lt;/VirtualHost&gt;
+</code></pre></div>
+<h3 id="activer-un-vhost-une-fois-le-fichier-cree">Activer un vhost une fois le fichier créé</h3>
+<div class="highlight"><pre><span></span><code>sudo a2ensite mon_site.conf [ici www.orleans.sp.fr.conf]
+sudo systemctl reload apache2
+</code></pre></div>
+<hr />
+<hr />
+<h2 id="cree-des-pages-pour">Crée des pages pour <www.orleans.sportludique.com></h2>
+<div class="highlight"><pre><span></span><code>sudo mkdir /var/www/siteorl
+sudo mkdir /var/www/siteorl/html
+sudo touch /var/www/siteorl/html/index.html
+          ou dans notre cas
+sudo touch /var/www/siteorl/index.html
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;fr&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;title&gt;Accueil - SportLudique&lt;/title&gt;
+  &lt;style&gt;
+    /* Style de base */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: <span class="ni">#000</span>; /* fond sombre */
+      color: white;
+      text-align: center;
+    }
+
+    /* Bandeau supérieur */
+    header {
+      background: linear-gradient(90deg, <span class="ni">#0B7A2B</span>, <span class="ni">#10A339</span>, <span class="ni">#00C27A</span>);
+      padding: 15px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    /* Contenu principal */
+    main {
+      padding: 60px 20px;
+    }
+
+    a {
+      display: inline-block;
+      background-color: <span class="ni">#10A339</span>;
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      margin-top: 20px;
+      transition: background 0.3s;
+    }
+
+    a:hover {
+      background-color: <span class="ni">#0B7A2B</span>;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;header&gt;🏋️‍♂️ SportLudique Project 2025-2026&lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;h1&gt;Bienvenue sur le projet SportLudique&lt;/h1&gt;
+    &lt;p&gt;Projet collaboratif des étudiants du BTS SIO – spécialité SISR&lt;/p&gt;
+    &lt;a href=&quot;https://lmeryfulbert.github.io/SportLudique2025-2026/&quot; target=&quot;_blank&quot;&gt;
+      Voir la Documentation
+    &lt;/a&gt;
+  &lt;/main&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+<hr />
+<hr />
+<h2 id="creer-une-route-statique-interne-pour-acceder-au-reseaux-lan">Créer une route statique (interne) pour accéder au réseaux lan</h2>
+<aside>
+
+sudo nano /etc/network/interfaces :
+
+<div class="highlight"><pre><span></span><code>auto lo
+iface lo inet loopback
+
+allow-hotplug ens3
+iface ens3 inet static
+        address 192.168.45.3/24
+        gateway 192.168.45.254
+        dns-nameservers 172.28.120.2
+        dns-search orl.orleans.sportludique.fr
+        up ip route add 172.28.96.0/19 via 192.168.45.1 dev ens3
+
+allow-hotplug ens4
+iface ens4 inet static
+        address 192.168.140.105/24
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code> up ip route add 172.28.96.0/19 via 192.168.45.1 dev ens3
+
+ Cela indique : Pour atteindre le réseau 172.28.96.0/19 , passer par la passerelle 192.168.45.1 , en utilisant l’interface ens3 .
+ Cela permet d&#39;acceder au site depuis le réseau lan 
+</code></pre></div>
+
+</aside>
+
+<hr />
+<h2 id="sur-les-routeurs">Sur les routeurs</h2>
+<blockquote>
+<p>/!\ Sur les routeurs penser à rediriger le port 80 sur le serveur web NAT/PAT
+</p>
+</blockquote>
+<h2 id="sur-le-serveur-dns">Sur le serveur DNS</h2>
+<blockquote>
+<p>/!\ Mettre enregistrement dns : www IN A 192.168.45.3</p>
+</blockquote>
+<p>import React, { useState } from 'react';</p>
+<p>export default function CryptoKeyGenerator() {
+  const [activeAlgo, setActiveAlgo] = useState('RSA');
+  const [command, setCommand] = useState('openssl genrsa 2048 &gt; siteweb/keys/privateKey.key');</p>
+<p>// Configuration des algorithmes et leurs commandes
+  const algorithms = [
+    {
+      name: 'RSA',
+      command: 'openssl genrsa 2048 &gt; siteweb/keys/privateKey.key'
+    },
+    {
+      name: 'Courbe elliptique',
+      command: 'openssl ecparam -genkey -name secp256k1 -out siteweb/keys/privateKey.key'
+    },
+    {
+      name: 'DSA',
+      command: 'openssl dsaparam -genkey 2048 | openssl dsa -out siteweb/keys/privateKey.key'
+    },
+    {
+      name: 'Ed25519',
+      command: 'openssl genpkey -algorithm ED25519 -out siteweb/keys/privateKey.key'
+    }
+  ];</p>
+<p>const handleAlgoClick = (algo) =&gt; {
+    setActiveAlgo(algo.name);
+    setCommand(algo.command);
+  };</p>
+<p>const copyToClipboard = () =&gt; {
+    navigator.clipboard.writeText(command);
+  };</p>
+<p>return (
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center p-8">
+      <div className="w-full max-w-3xl bg-gray-800 rounded-lg shadow-2xl p-8">
+        <h1 className="text-2xl font-bold text-white mb-6">Générateur de clés cryptographiques</h1></p>
+<div class="codehilite"><pre><span></span><code><span class="w">    </span>{/*<span class="w"> </span>Boutons<span class="w"> </span>des<span class="w"> </span>algorithmes<span class="w"> </span>*/}
+<span class="w">    </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">className=</span><span class="s">&quot;flex flex-wrap gap-3 mb-6&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span>{algorithms.map((algo)<span class="w"> </span>=&gt;<span class="w"> </span>(
+<span class="w">        </span><span class="nt">&lt;button</span>
+<span class="w">          </span><span class="na">key=</span><span class="s">{algo.name}</span>
+<span class="w">          </span><span class="na">onClick=</span><span class="s">{()</span><span class="w"> </span><span class="err">=</span><span class="nt">&gt;</span><span class="w"> </span>handleAlgoClick(algo)}
+<span class="w">          </span>className={`px-6<span class="w"> </span>py-2<span class="w"> </span>rounded-lg<span class="w"> </span>font-medium<span class="w"> </span>transition-all<span class="w"> </span>duration-200<span class="w"> </span>${
+<span class="w">            </span>activeAlgo<span class="w"> </span>===<span class="w"> </span>algo.name
+<span class="w">              </span>?<span class="w"> </span>&#39;bg-blue-600<span class="w"> </span>text-white<span class="w"> </span>shadow-lg&#39;
+<span class="w">              </span>:<span class="w"> </span>&#39;bg-gray-700<span class="w"> </span>text-gray-300<span class="w"> </span>hover:bg-gray-600&#39;
+<span class="w">          </span>}`}
+<span class="w">        </span>&gt;
+<span class="w">          </span>{algo.name}
+<span class="w">        </span><span class="nt">&lt;/button&gt;</span>
+<span class="w">      </span>))}
+<span class="w">    </span><span class="nt">&lt;/div&gt;</span>
+
+<span class="w">    </span>{/*<span class="w"> </span>Zone<span class="w"> </span>de<span class="w"> </span>commande<span class="w"> </span>*/}
+<span class="w">    </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">className=</span><span class="s">&quot;bg-gray-900 rounded-lg p-6 border border-gray-700&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">className=</span><span class="s">&quot;flex items-center justify-between mb-2&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;span</span><span class="w"> </span><span class="na">className=</span><span class="s">&quot;text-gray-400 text-sm font-mono&quot;</span><span class="nt">&gt;</span>Terminal<span class="nt">&lt;/span&gt;</span>
+<span class="w">        </span><span class="nt">&lt;button</span>
+<span class="w">          </span><span class="na">onClick=</span><span class="s">{copyToClipboard}</span>
+<span class="w">          </span><span class="na">className=</span><span class="s">&quot;px-3 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded text-sm transition-colors&quot;</span>
+<span class="w">        </span><span class="nt">&gt;</span>
+<span class="w">          </span>Copier
+<span class="w">        </span><span class="nt">&lt;/button&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">      </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">className=</span><span class="s">&quot;bg-black rounded p-4&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;code</span><span class="w"> </span><span class="na">className=</span><span class="s">&quot;text-green-400 font-mono text-sm break-all&quot;</span><span class="nt">&gt;</span>
+<span class="w">          </span>{command}
+<span class="w">        </span><span class="nt">&lt;/code&gt;</span>
+<span class="w">      </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/div&gt;</span>
+
+<span class="w">    </span>{/*<span class="w"> </span>Instructions<span class="w"> </span>*/}
+<span class="w">    </span><span class="nt">&lt;div</span><span class="w"> </span><span class="na">className=</span><span class="s">&quot;mt-6 text-gray-400 text-sm&quot;</span><span class="nt">&gt;</span>
+<span class="w">      </span><span class="nt">&lt;p&gt;</span>•<span class="w"> </span>Cliquez<span class="w"> </span>sur<span class="w"> </span>un<span class="w"> </span>algorithme<span class="w"> </span>pour<span class="w"> </span>générer<span class="w"> </span>la<span class="w"> </span>commande<span class="w"> </span>correspondante<span class="nt">&lt;/p&gt;</span>
+<span class="w">      </span><span class="nt">&lt;p&gt;</span>•<span class="w"> </span>Utilisez<span class="w"> </span>le<span class="w"> </span>bouton<span class="w"> </span>&quot;Copier&quot;<span class="w"> </span>pour<span class="w"> </span>copier<span class="w"> </span>la<span class="w"> </span>commande<span class="w"> </span>dans<span class="w"> </span>le<span class="w"> </span>presse-papiers<span class="nt">&lt;/p&gt;</span>
+<span class="w">      </span><span class="nt">&lt;p&gt;</span>•<span class="w"> </span>La<span class="w"> </span>commande<span class="w"> </span>génère<span class="w"> </span>une<span class="w"> </span>clé<span class="w"> </span>privée<span class="w"> </span>dans<span class="w"> </span>le<span class="w"> </span>dossier<span class="w"> </span>spécifié<span class="nt">&lt;/p&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/div&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>
+
+<p>);
+}</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
