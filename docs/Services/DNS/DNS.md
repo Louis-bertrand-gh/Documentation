@@ -37,8 +37,6 @@ dns    IN      A      192.168.45.2
 sousdomaine.exemple.com.  IN  NS  ns.serveurdns.externe.com.
 ```
 
-### Exemple de configuration
-
 ## Resolveur DNS
 
 ### Fichier /etc/bind/named.conf.options
@@ -128,12 +126,12 @@ Cela permet d'éviter une potentielle censure en utilisant le serveur DNS d'un O
 
 //zone "255.in-addr.arpa" {
 //      type master;
-//      file "/etc/bind/db.255";
+//      file "/etc/bind/db.255";f
 //};
 
 ```
 
-### Fichier /etc/bind/named.conf.local
+### Fichier /etc/bind/named.conf.local 
 
 ```
     //zone externe
@@ -163,8 +161,8 @@ Cela permet d'éviter une potentielle censure en utilisant le serveur DNS d'un O
 
 <aside>
 
-Une vue (ou view en anglais)
-Dans Bind9 est une vue un mécanisme de filtrage et de séparation logique du service DNS. Elle permet à un même serveur DNS de répondre différemment selon l’origine de la requête.
+>Une vue (ou view en anglais)
+Dans Bind9 est une vue un `mécanisme de filtrage` et de séparation logique du service DNS. Elle permet à un même serveur DNS de `répondre différemment selon l’origine` de la requête.
 
 </aside>
 
@@ -193,23 +191,23 @@ www     IN      A       192.168.45.3
 
 > @       IN      SOA     [ns1.orleans.sportludique.fr](http://dns.orleans.sportludique.fr/).
 >
-> - **OA (Start Of Authority)** définit **le serveur DNS maître (primaire)** et **les paramètres d’autorité** de la zone.
-> - Il est **obligatoirement unique** dans chaque fichier de zone.
-> - En plus du DNS primaire, il indique aussi **l’adresse e-mail de l’administrateur** et les **valeurs de synchronisation** (Serial, Refresh, etc.).
+> - `OA (Start Of Authority)` définit le `serveur DNS maître` (primaire) et `les paramètres d’autorité` de la zone.
+> - Il est `obligatoirement unique` dans chaque fichier de zone.
+> - En plus du DNS primaire, il indique aussi l’adresse e-mail de l’administrateur et les `valeurs de synchronisation` (Serial, Refresh, etc.).
 
 > @       IN      NS      [ns1.orleans.sportludique.fr](http://www.orleans.sportludique.fr/).
 >
-> - Les enregistrements **NS (Name Server)** désignent les **serveurs DNS autoritaires** pour cette zone.
-> - Il peut y en avoir **plusieurs** (un primaire, un ou plusieurs secondaires).
+> - Les enregistrements `NS (Name Server)` désignent les `serveurs DNS autoritaires` pour cette zone.
+> - Il peut y en avoir `plusieurs (un primaire, un ou plusieurs secondaires)`.
 
 > dns     IN      A       192.168.45.2
 >
-> - ’enregistrement **A (Address)** associe un **nom d’hôte** (ex. `ns1`) à une **adresse IPv4**.
-> - C’est le lien entre **nom → IP**.
+> - ’enregistrement `A (Address)` associe un `nom d’hôte` (ex. `ns1`) à une `adresse IPv4`.
+> - C’est le lien entre `nom → IP`.
 
 > monsite IN      CNAME   www
 >
-> - Le **CNAME (Canonical Name)** crée un **alias** : il fait pointer un nom vers **un autre nom DNS**, **pas directement vers une IP**.
+> - Le `CNAME (Canonical Name)` crée un `alias` : il fait pointer un nom vers `un autre nom DNS`, `pas directement vers une IP`.
 > - Le résolveur suit ensuite ce second nom pour trouver son enregistrement A.
 
 ### Fichier /etc/bind/db.orleans.sp.fr.externe
